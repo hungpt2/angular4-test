@@ -1,0 +1,34 @@
+.padding-top-20 {
+    padding-top: 20px;
+}
+.margin-left-20 {
+    margin-left: 20px;
+}
+.inline-flex {
+    display: inline-flex;
+}
+.label-opt {
+    line-height: 35px;
+}
+.height-datepicker {
+    height: 35px;
+    margin: 0px;
+    box-sizing: inherit;
+    background-color: #fff;
+    border: 1px solid #c2cfd6;
+}
+.height-btn {
+    height: 78px
+}
+.btn-slick {
+    width: 50px;
+}
+.opt-img {
+    padding: 20px 0 20px 0;
+}
+.opt-type {
+    margin: 0px;
+}
+.warning {
+    border: 1px solid red;
+}

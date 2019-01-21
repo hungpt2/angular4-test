@@ -1,0 +1,41 @@
+<div class="animated fadeIn container padding-top-20 text-center">
+  <div class="option-area inline-flex">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+      <div class="img-type col-xs-12 col-sm-12 col-md-12 col-lg-12 inline-flex">
+        <label class="label-opt col-xs-4 col-sm-4 col-md-4 col-lg-4">Date: </label>
+        <input type="date" class="form-control margin-left-20 col-xs-7 col-sm-7 col-md-7 col-lg-7 height-datepicker" [ngClass]="isErr?'warning':''" [(ngModel)]="chooseDate">
+      </div>
+      <div class="img-type col-xs-12 col-sm-12 col-md-12 col-lg-12 inline-flex">
+        <label class="label-opt col-xs-4 col-sm-4 col-md-4 col-lg-4">Imagery Type: </label>
+        <select class="form-control col-xs-7 col-sm-7 col-md-7 col-lg-7 opt-type" [(ngModel)]="imgType">
+          <option value="natural">Natural</option>
+          <option value="enhanced">Enhanced</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <button class="col-xs-10 col-sm-10 col-md-10 col-lg-10 height-btn" (click)="getImg()">Fetch</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="text-center opt-img">
+    <button class="btn-slick" (click)="carouselRef.play();isPlay=true;" [disabled]="isPlay">Play</button>
+    <button class="btn-slick" (click)="carouselRef.pause();isPlay=false;" [disabled]="!isPlay">Pause</button>
+  </div>
+  <div>
+    <div class="fixed-sn">
+      <div class="col-lg-10 ml-auto mr-auto">
+        <mdb-carousel #carouselRef [interval]="myInterval" [noWrap]="noWrapSlides" [(activeSlide)]="activeSlideIndex" (activeSlideChange)="activeSlideChange()">
+          <mdb-slide *ngFor="let slide of slides; let index=index">
+            <img [src]="slide.image" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="carousel-caption">
+              <!-- <h4>Slide {{index}}</h4> -->
+              <p>{{slide.text}}</p>
+            </div>
+          </mdb-slide>
+        </mdb-carousel>
+      </div>
+    </div>
+  </div>
+</div>
